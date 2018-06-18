@@ -6,7 +6,8 @@ jobs:
       - checkout
       - run: rvm install 2.3.4
       - run: bash -l -c "rvm use 2.3.4"
-      - run: ruby -v
+      - run: bash -l -c "ruby -v"
+
 
 workflows:
   version: 2
