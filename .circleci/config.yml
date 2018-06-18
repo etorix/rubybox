@@ -5,7 +5,7 @@ jobs:
     steps:
       - checkout
       - run: rvm install 2.3.4
-      - run: rvm use 2.3.4
+      - run: bash -l -c "rvm use 2.3.4"
       - run: ruby -v
 
 workflows:
