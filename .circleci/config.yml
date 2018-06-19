@@ -7,6 +7,7 @@ jobs:
       - run: echo "[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"" >> $HOME/.bashrc
       - run: cat $HOME/.bashrc
       - run: rvm install 2.3.4
+      - run: rvm get stable --auto-dotfiles
       - run: bash -l -c "rvm use 2.3.4 --install --create"
       - run: ruby -v
 
