@@ -6,9 +6,12 @@ jobs:
       - run: rvm install 2.3.4
       - run: echo 2.3.4 >> .ruby-version
       - run: |
-             source $(rvm env --path)
+             bash -l "source $(rvm env --path)"
              ruby -v
-      - run: . $(rvm env --path) >> $BASH_ENV
+      - run: 
+          shell: /bin/bash --login -eo pipefail
+          command: echo . $(rvm env --path) >> $BASH_ENV
+      - run: cat $BASH_ENV
       - run: ruby -v
       - run: echo 2.3.4 >> .ruby-version
       - run: ruby -v
