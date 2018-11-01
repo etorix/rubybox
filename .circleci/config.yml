@@ -10,6 +10,7 @@ jobs:
       - run: ruby -v
       - run: rvm install 2.3.4
       - run: rvm use 2.3.4 --default
+      - run: source $(rvm env --path)
       - run: ruby -v
       - run: 
           shell: /bin/bash --login -eo pipefail
