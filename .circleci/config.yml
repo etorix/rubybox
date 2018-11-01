@@ -4,7 +4,9 @@ jobs:
     machine: true
     steps:
       - run: bash -lc "rvm install 2.3.4"
-      - run: bash -lc "rvm use 2.3.4 --default"
+      - run: |
+             bash -lc "rvm use 2.3.4 --default"
+             bash -lc "rvm use 2.3.4"
       - run: rvm list
       - run: echo 2.3.4 >> .ruby-version
       - run:
