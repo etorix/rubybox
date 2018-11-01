@@ -4,10 +4,9 @@ jobs:
     machine: true
     steps:
       - run: cat $HOME/.bashrc
-      - run: rvm install 2.3.4
       - run: rvm get stable --auto-dotfiles
-      - run: bash -c "rvm use 2.3.4 --install --create"
-      - run: cat $HOME/.bashrc
+      - run: ruby -v
+      - run: echo 2.3.4 >> .ruby-version
       - run: ruby -v
 
 
