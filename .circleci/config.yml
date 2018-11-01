@@ -5,6 +5,7 @@ jobs:
     steps:
       - checkout
       - run: |
+             echo "source $HOME/.rvm/scripts/rvm" >> ~/.bashrc
              echo "[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"" >> $HOME/.bashrc
              cat $HOME/.bashrc
              rvm install 2.3.4
