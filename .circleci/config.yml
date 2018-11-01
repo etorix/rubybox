@@ -5,7 +5,7 @@ jobs:
     steps:
       - checkout
       - run: |
-             echo "[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"" >> $HOME/.bash_profile
+             echo "[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"" >> $HOME/.bashrc
              cat $HOME/.bashrc
              rvm install 2.3.4
              rvm get stable --auto-dotfiles
