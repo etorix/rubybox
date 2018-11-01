@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    machine: true
+    steps:
+      - checkout
+      - run: sudo wget -O /usr/src/ruby.tar.gz https://cache.ruby-lang.org/pub/ruby/2.3/ruby-2.3.4.tar.gz
+      - run: sudo tar -xvzf /usr/src/ruby.tar.gz -C /srv/
+      - run: sudo update-alternatives --install /usr/bin/ruby ruby /srv/ruby-2.3.4 10
+      - run: ruby -v
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
