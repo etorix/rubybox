@@ -6,6 +6,9 @@ jobs:
       - run: rvm install 2.3.4
       - run: rvm list
       - run: echo 2.3.4 >> .ruby-version
+      - run:
+          shell: /bin/bash --login -eo pipefail
+          command: rvm list ; which ruby
       - run: |
              bash -l "source $(rvm env --path)"
              ruby -v
