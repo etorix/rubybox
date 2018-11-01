@@ -9,7 +9,7 @@ jobs:
       - run: echo 2.3.4 >> .ruby-version
       - run: ruby -v
       - run: rvm use 2.3.4 --default
-
+      - run: ruby -v
 
 workflows:
   version: 2
