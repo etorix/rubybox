@@ -10,7 +10,9 @@ jobs:
       - run: ruby -v
       - run: rvm use 2.3.4 --default
       - run: ruby -v
-
+      - run: |
+             which ruby
+             rvm list
 workflows:
   version: 2
   build:
