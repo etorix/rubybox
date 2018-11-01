@@ -3,7 +3,7 @@ jobs:
   build:
     machine: true
     steps:
-      - checkout
+#     - checkout
 #     - run: echo "[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"" >> $HOME/.bashrc
       - run: cat $HOME/.bashrc
       - run: rvm install 2.3.4
