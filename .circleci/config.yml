@@ -3,9 +3,6 @@ jobs:
   build:
     machine: true
     steps:
-#     - checkout
-      - run: sed -i "1i[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"" $HOME/.bashrc
-      - run: export PATH="$PATH:/opt/circleci/.rvm/bin"
       - run: cat $HOME/.bashrc
       - run: rvm install 2.3.4
       - run: rvm get stable --auto-dotfiles
@@ -19,3 +16,5 @@ workflows:
   build:
     jobs:
       - build
+
+
