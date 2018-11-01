@@ -3,13 +3,15 @@ jobs:
   build:
     machine: true
     steps:
-      - run: cat $HOME/.bashrc
-      - run: rvm get stable --auto-dotfiles
+      - run: rvm install 2.3.4
+      - run: echo 2.3.4 >> .ruby-version
+      - run: |
+             source $(rmv env --path)
+             ruby -v
+      - run: . $(rmv env --path) >> $BASH_ENV
       - run: ruby -v
       - run: echo 2.3.4 >> .ruby-version
       - run: ruby -v
-      - run: rvm install 2.3.4
-      - run: rvm use 2.3.4 --default
       - run: source $(rvm env --path)
       - run: ruby -v
       - run: 
