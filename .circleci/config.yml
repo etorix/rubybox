@@ -3,15 +3,16 @@ jobs:
   build:
     machine: true
     steps:
-      - run: rvm install 2.3.4
+      - run: bash -l "rvm install 2.3.4"
+      - run: bash -l "rvm use 2.3.4 --default"
       - run: rvm list
       - run: echo 2.3.4 >> .ruby-version
       - run:
           shell: /bin/bash --login -eo pipefail
           command: rvm list ; which ruby
-      - run: |
-             bash -l "source $(rvm env --path)"
-             ruby -v
+#      - run: |
+#             bash -l "source $(rvm env --path)"
+#             ruby -v
       - run: 
           shell: /bin/bash --login -eo pipefail
           command: echo ". $(rvm env --path)" >> $BASH_ENV
