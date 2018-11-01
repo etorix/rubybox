@@ -4,14 +4,12 @@ jobs:
     machine: true
     steps:
       - checkout
-      - run: |
-             echo "source $HOME/.rvm/scripts/rvm" >> ~/.bashrc
-             echo "[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"" >> $HOME/.bashrc
-             cat $HOME/.bashrc
-             rvm install 2.3.4
-             rvm get stable --auto-dotfiles
-             bash -l -c "rvm use 2.3.4 --install --create"
-             ruby -v
+      - run: echo "[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"" >> $HOME/.bashrc
+      - run: cat $HOME/.bashrc
+      - run: rvm install 2.3.4
+      - run: rvm get stable --auto-dotfiles
+      - run: bash -l -c "rvm use 2.3.4 --install --create"
+      - run: ruby -v
 
 
 workflows:
