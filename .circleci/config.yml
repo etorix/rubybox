@@ -11,9 +11,7 @@ jobs:
       - run: rvm install 2.3.4
       - run: rvm use 2.3.4 --default
       - run: ruby -v
-      - run: |
-             which ruby
-             rvm list
+      - run: bash -l "rvm list ; which ruby"
 workflows:
   version: 2
   build:
