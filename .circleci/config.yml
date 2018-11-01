@@ -8,7 +8,7 @@ jobs:
       - run: |
              source $(rmv env --path)
              ruby -v
-      - run: . $(rmv env --path) >> $BASH_ENV
+      - run: . $(rvm env --path) >> $BASH_ENV
       - run: ruby -v
       - run: echo 2.3.4 >> .ruby-version
       - run: ruby -v
